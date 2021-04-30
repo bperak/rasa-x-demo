@@ -1,34 +1,60 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- mood_deny:
+    use_entities: true
+- mood_affirm:
+    use_entities: true
+- mood_angry:
+    use_entities: true
+entities: []
+slots: {}
+responses:
+  utter_greet:
+  - image: https://m.vecernji.hr/media/img/cd/34/2a7cd2db5c0208217164.jpeg
+    text: God Bless!
+  - image: https://static6.depositphotos.com/1000792/618/v/600/depositphotos_6181163-stock-illustration-dr-freud-psychotherapist.jpg
+    text: Good day! Shall we start with your last dream? Or ...
+  - image: https://thecaribbeancamera.com/wp-content/uploads/2015/11/Luciano.gif
+    text: High Man, me too!
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_angry:
+  - text: What are you angry about?
+  - text: Why are you angry?
+  - text: Yes, I am also angry with my local power distributor. What's your problem?
+  - text: Who are you angry with?
+  utter_angry_picture:
+  - image: https://wallpaperaccess.com/full/1669302.jpg
+    text: Don't be angry
+actions:
+- utter_angry
+forms: {}
+e2e_actions: []

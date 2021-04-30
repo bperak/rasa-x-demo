@@ -28,3 +28,11 @@ stories:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+- story: angry
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_angry
+  - action: utter_angry
+  - action: utter_angry_picture
+  - action: utter_goodbye

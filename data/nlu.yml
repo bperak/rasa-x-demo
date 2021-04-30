@@ -15,6 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - ša ima?
 - intent: goodbye
   examples: |
     - cu
@@ -75,3 +76,6 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+- intent: mood_angry
+  examples: |
+    - I am angry
