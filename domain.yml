@@ -25,6 +25,14 @@ intents:
     use_entities: true
 - mood_angry:
     use_entities: true
+- created_bot:
+    use_entities: true
+- inner_life_of_bot:
+    use_entities: true
+- book_recommend:
+    use_entities: true
+- covid_testing:
+    use_entities: true
 entities: []
 slots: {}
 responses:
@@ -54,7 +62,24 @@ responses:
   utter_angry_picture:
   - image: https://wallpaperaccess.com/full/1669302.jpg
     text: Don't be angry
+  utter__inner_life:
+  - text: I am so tired and would like to go on sleep mode
+  - text: Complex, virtual and binary these days.
+  - text: I am constantly busy
+  utter_what_kind_of_book:
+  - text: O you like reading books. What kind of book do you need?
+  - text: What kind of a book do you need?
+  utter_covid_testing_info:
+  - text: 'You can find more information about testing in Rijeka at : https://www.zzjzpgz.hr/'
+  - text: Hope this helps! https://www.visitmalinska.com/testiranje-na-covid-19-u-krku-i-rijeci/
+  - text: 'Here is the contact of Public Health institutions: https://domzdravlja-pgz.hr/covid-19-upute-o-postupanju/'
+  - text: 'The list of important contacts on COVID-19: https://www.rijeka.hr/koronavirus/korisne-informacije-i-vazni-kontakti/'
+  - image: https://www.fiuman.hr/wp-content/uploads/2020/03/dom-zdravlja2.jpg
+    text: Zavod za javno zdravstvo PGŽ, Krešimirova ul. 52 a, 51000, Rijeka
 actions:
 - utter_angry
+- utter__inner_life
+- utter_what_kind_of_book
+- utter_covid_testing_info
 forms: {}
 e2e_actions: []

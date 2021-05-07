@@ -60,6 +60,7 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - i am happy
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -79,3 +80,18 @@ nlu:
 - intent: mood_angry
   examples: |
     - I am angry
+- intent: created_bot
+  examples: |
+    - who created you?
+- intent: inner_life_of_bot
+  examples: |
+    - how is your life?
+- intent: book_recommend
+  examples: |
+    - find me a book
+- intent: covid_testing
+  examples: |
+    - I need to do covid testing
+    - Where can I do covid testing
+    - I have symptoms that might be corona
+    - How to do PCR for corona in Rijeka?
