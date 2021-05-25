@@ -5,6 +5,8 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- faq:
+    use_entities: true
 - greet:
     use_entities: true
 - goodbye:
@@ -19,30 +21,14 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
-- mood_deny:
+- chitchat:
     use_entities: true
-- mood_affirm:
-    use_entities: true
-- mood_angry:
-    use_entities: true
-- created_bot:
-    use_entities: true
-- inner_life_of_bot:
-    use_entities: true
-- book_recommend:
-    use_entities: true
-- covid_testing:
-    use_entities: true
-entities: []
+entities:
+- undefined
 slots: {}
 responses:
   utter_greet:
-  - image: https://m.vecernji.hr/media/img/cd/34/2a7cd2db5c0208217164.jpeg
-    text: God Bless!
-  - image: https://static6.depositphotos.com/1000792/618/v/600/depositphotos_6181163-stock-illustration-dr-freud-psychotherapist.jpg
-    text: Good day! Shall we start with your last dream? Or ...
-  - image: https://thecaribbeancamera.com/wp-content/uploads/2015/11/Luciano.gif
-    text: High Man, me too!
+  - text: '"Hey! How are you?"'
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -54,32 +40,119 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-  utter_angry:
-  - text: What are you angry about?
-  - text: Why are you angry?
-  - text: Yes, I am also angry with my local power distributor. What's your problem?
-  - text: Who are you angry with?
-  utter_angry_picture:
-  - image: https://wallpaperaccess.com/full/1669302.jpg
-    text: Don't be angry
-  utter__inner_life:
-  - text: I am so tired and would like to go on sleep mode
-  - text: Complex, virtual and binary these days.
-  - text: I am constantly busy
-  utter_what_kind_of_book:
-  - text: O you like reading books. What kind of book do you need?
-  - text: What kind of a book do you need?
-  utter_covid_testing_info:
+  utter_chitchat/ask_name:
+  - image: https://i.imgur.com/zTvA58i.jpeg
+    text: Hello, my name is Retrieval Bot
+  utter_chitchat/ask_weather:
+  - text: Oh, it does look sunny right now.
+  - text: I am not sure of the whole week but I can see the sun is out today.
+  utter_chitchat/book_recommend:
+  - text: Here is some site that you should check. http://libgen.rs/
+  - text: Please check. http://libgen.rs/
+  utter_chitchat/covid_info:
+  - text: 'Here is the contact of Public Health institutions: https://domzdravlja-pgz.hr/covid-19-upute-o-postupanju/'
+  - text: |-
+      The list of important contacts on COVID-19: https://www.rijeka.hr/koronavirus/korisne-informacije-i-vazni-kontakti/
+      Zavod za javno zdravstvo PGŽ, Krešimirova ul. 52 a, 51000, Rijeka
   - text: 'You can find more information about testing in Rijeka at : https://www.zzjzpgz.hr/'
   - text: Hope this helps! https://www.visitmalinska.com/testiranje-na-covid-19-u-krku-i-rijeci/
-  - text: 'Here is the contact of Public Health institutions: https://domzdravlja-pgz.hr/covid-19-upute-o-postupanju/'
-  - text: 'The list of important contacts on COVID-19: https://www.rijeka.hr/koronavirus/korisne-informacije-i-vazni-kontakti/'
-  - image: https://www.fiuman.hr/wp-content/uploads/2020/03/dom-zdravlja2.jpg
-    text: Zavod za javno zdravstvo PGŽ, Krešimirova ul. 52 a, 51000, Rijeka
+  utter_faq/ffri_definition:
+  - image: https://www.mindbot.eu/wp-content/uploads/ffri-office-800x321.jpg
+    text: |-
+      Throughout its history, the Faculty of Humanities and Social Sciences has undergone several changes. For twenty years it operated as the Vocational College of Education and Teacher Training College. In1977, when the Faculty of Industrial Education and the Teacher Training Colleges of Rijeka, Pula and Gospic merged and became a part of the University of Rijeka, the Faculty of Education was established. In 1998, the Faculty of Education was registered under the name Faculty of Humanities and Social Sciences.
+
+      The mission of the Faculty of Humanities and Social Sciences is to provide excellence in education to students in pursuit of bachelors, masters and PhD degrees in the fields of social sciences and humanities.
+
+      In the academic year 2005/2006, the Faculty of Humanities and Social Sciences introduced comprehensive changes in line with the objectives defined by the Bologna Declaration, and adopted the three cycles of higher education qualification and the ECTS.
+  utter_faq/public_transport_bus:
+  - text: |-
+      You can reach FFRI from the city centre by bus line 8, 2, or bus line number 1B. 
+      For a more accurate and updated timetable please visit; https://www.autotrolej.hr/linije/gradske-linije/
+  utter_faq/ffri_departments:
+  - text: Department of English Language and Literature, Department of Philosophy, Department of German Language and Literature, Department of Croatian Language and Literature, Department of Cultural Studies, Department of Education, Department of History, Department of Art History, Department of Psychology, Department of Italian Language and Literature, Division of Physical Education
+  utter_faq/ffri_centers:
+  - buttons:
+    - payload: faq/ffri_centers_cis
+      title: 'Centre for Iconographic Studies '
+    - payload: ''
+      title: 'Centre for Language Research '
+    - payload: ''
+      title: Centre for Teacher Education
+    - payload: ''
+      title: Centre for Women's Studies
+    - payload: ''
+      title: Rijeka Croatist School
+    text: |-
+      Centres are organisational units in which scientific-research activities are performed, as well as activities in which students can participate by connecting practice, science, art and higher education. Centres can carry out professional development programmes, lifelong learning programmes and training. In FFRI there are:
+      Centre for Iconographic Studies 
+      Centre for Language Research 
+      Centre for Teacher Education
+      Centre for Women's Studies
+      Rijeka Croatist School
+  utter_faq/ffri_centers_cis:
+  - text: |-
+      Centre for Iconographic Studies was founded in January 2010 as an academic centre at the Faculty of Humanities and Social Sciences in Rijeka. The Centre's main activities are:
+       
+      establishing academic team and committee for the organisation of iconographic studies
+      organising the annual international conference of iconographic studies
+      publishing: IKON – Journal of Iconographic Studies, monographs, studies, databases and other publications, e-publishing.
+      organising seminars, workshops, round tables, panels, lectures
+      launching projects with particular focus on international cooperation and networking
+      organising summer courses, workshops and other forms of lifelong education
+      establishing the platform of academics and researchers in Croatia (promoting iconographic studies nationally) and establishing connections with international institutions and individuals (presenting Croatian academics and projects internationally)
+      promoting young scholars and students
+
+      IKON is a journal published annually by the Centre of Iconographic Studies, as proceedings of the papers presented at the annual international conference of iconographic studies.
+
+      IKON is indexed in SCOPUS base and Norwegian Social Science Data Services, as well as other international bibliographic art history databases (Princeton University, Getty Foundation, Harvard, Cornell, Yale etc.).
+      https://www.ffri.uniri.hr/en/centres/iconographic.html
+  utter_faq/ffri_departments_cs:
+  - text: You can find more information about cultural studies at cultstud.ffri.hr
+  utter_faq/ffri_contact:
+  - text: |-
+      Primary contact:
+
+      Faculty of Humanities and Social Sciences, Sveučilišna avenija 4, HR-51000 Rijeka
+      Tel. 051/ 265-600
+      Fax. 051 216-099
+      E-mail: dekanat@ffri.hr
+  utter_faq/ffri_departments_h:
+  - text: You can find more about Department of History at https://www.ffri.uniri.hr/en/departments/history.html
+  utter_faq/ffri_departments_edu:
+  - text: Please find more information on https://www.ffri.uniri.hr/en/departments/education.html
+  utter_faq/ffri_departments_ah:
+  - text: Please find more information on https://www.ffri.uniri.hr/en/departments/art.html
+  utter_faq/ffri_departments_cll:
+  - text: You can find more on Croatian Language and Literature here...
+  utter_faq/ffri_centers_clr:
+  - text: 'The Center for Language Research (CLAR) is a multidisciplinary center dedicated to the study of language from the perspective of different humanities and social sciences. You can find more at: https://cji.uniri.hr/en/home/'
+  utter_faq/ffri_centers_cte:
+  - text: 'Centre for Teacher Education organises educational programmes for acquiring teaching competences at the undergraduate and graduate level of teacher education, as well as lifelong learning programmes at all levels of education. You can find more at: https://www.ffri.uniri.hr/en/centres/teacher-education.html'
+  utter_faq/ffri_centers_cws:
+  - text: "Centre for Women's Studies  is a scientific research platform and a gathering place for science, art and civil society around topics related to feminism, gender, a critical theory of sexuality. You can find more at: https://czs.uniri.hr/"
+  utter_faq/ffri_centers_rcs:
+  - text: 'The Rijeka Croatist School promotes the Croatian language, literature and culture internationally, develops modern methods of teaching Croatian as a second or a foreign language, promotes mobility and organises testing  of knowledge of Croatian as a second or a foreign language. You can find more at: https://www.ffri.uniri.hr/en/centres/rks.html'
+  utter_faq/public_transport_bus_ride:
+  - text: The bus ride takes approximately 7 to 10 minutes, depending on traffic
+  utter_faq/ffri_departments_ell:
+  - text: In 1996, the study programme in English Language and Literature was launched by the Department of Philology at the Faculty of Pedagogy (now Faculty of Humanities and Social Sciences) offered as a double major study programme in set combination with Croatian Language and Literature.  The curriculum covers various areas of linguistics and literature, and the applied part of the study programme includes productive language skills and English language teaching methodology. Courses are held entirely in English, which contributes to the continuous development of the students’ language competences. Some of the courses are taught by native speakers (lectors and visiting professors from the United States, Australia, Great Britain and Ireland). You can find more info on  https://www.ffri.uniri.hr/en/departments/english.html
+  utter_faq/public_transport_map:
+  - text: You can see the route at https://www.google.com/maps/dir//Filozofski+fakultet,+Sveu%C4%8Dili%C5%A1na+Av+4,+51000,+Rijeka/@45.3279589,14.4656943,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x4764a1abbca39755:0xa12a1f41eacebcfc!2m2!1d14.4656943!2d45.3279589!3e0
+  - image: https://c8.alamy.com/comp/D41WXB/a-tired-man-wearily-pushes-his-bicycle-up-a-hill-during-a-summer-ride-D41WXB.jpg
+    text: You can see the route at https://www.google.com/maps/dir//Filozofski+fakultet,+Sveu%C4%8Dili%C5%A1na+Av+4,+51000,+Rijeka/@45.3279589,14.4656943,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x4764a1abbca39755:0xa12a1f41eacebcfc!2m2!1d14.4656943!2d45.3279589!3e0    you can try the bike ...hehe
+  utter_faq/restaurants:
+  - text: You can find more information on restaurants in Rijeka at https://www.tripadvisor.com/Restaurants-g297516-Rijeka_Primorje_Gorski_Kotar_County.html or https://wolt.com/hr/hrv/rijeka
+  utter_faq/accomodation_dormitory:
+  - image: https://www.scri.uniri.hr/images/2020/02/24/1-paviljoni1-i-2-s.jpg
+    text: For information on student dormitories check https://www.scri.uniri.hr/smjestaj/
+  utter_faq/accommodation_dormitory:
+  - image: https://www.scri.uniri.hr/images/2020/02/24/1-paviljoni1-i-2-s.jpg
+    text: 'For information on student dormitories in Rijeka check: https://www.scri.uniri.hr/smjestaj/'
+  utter_faq/accommodation_private:
+  - text: 'You can search for apartments to rent in Rijeka here: https://www.njuskalo.hr/iznajmljivanje-stanova/rijeka'
 actions:
-- utter_angry
-- utter__inner_life
-- utter_what_kind_of_book
-- utter_covid_testing_info
+- utter_faq/ffri_departments_cll
+- utter_faq/ffri_departments_ell
+- utter_faq/public_transport_map
 forms: {}
 e2e_actions: []

@@ -15,38 +15,44 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-    - ša ima?
+    - ola
+    - Ola
+    - Hello
+    - hi there
+    - how do you do
 - intent: goodbye
   examples: |
-    - cu
     - good by
     - cee you later
     - good night
-    - good afternoon
     - bye
     - goodbye
     - have a nice day
     - see you around
     - bye bye
     - see you later
-- intent: mood_affirm
+    - who are you
+- intent: affirm
   examples: |
     - yes
+    - y
     - indeed
     - of course
     - that sounds good
     - correct
-- intent: mood_deny
+    - tired
+- intent: deny
   examples: |
     - no
+    - n
     - never
     - I don't think so
     - don't like that
     - no way
+    - not really
 - intent: mood_great
   examples: |
     - perfect
-    - very good
     - great
     - amazing
     - feeling like a king
@@ -55,12 +61,14 @@ nlu:
     - I am great
     - I am amazing
     - I am going to save the world
-    - super
+    - super stoked
     - extremely good
     - so so perfect
     - so good
     - so perfect
     - i am happy
+    - good
+    - ok
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -72,26 +80,181 @@ nlu:
     - sad
     - very sad
     - unhappy
-    - not so good
+    - not good
     - not very good
     - extremly sad
     - so saad
     - so sad
-- intent: mood_angry
+    - Im happy
+    - sleepy
+    - i?m sad
+    - not bad for early morning nd yourself
+- intent: bot_challenge
   examples: |
-    - I am angry
-- intent: created_bot
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - what are you
+- intent: chitchat/ask_name
   examples: |
-    - who created you?
-- intent: inner_life_of_bot
+    - What is your name?
+    - May I know your name?
+    - What do people call you?
+    - Do you have a name for yourself?
+    - what is your name?
+- intent: chitchat/ask_weather
   examples: |
-    - how is your life?
+    - What's the weather like today?
+    - Does it look sunny outside today?
+    - Oh, do you mind checking the weather for me please?
+    - I like sunny days in Rijeka.
+    - the weather
+    - what is the weather
+    - how is the weather
+- intent: chitchat/book_recommend
+  examples: |
+    - Do you have some book to recommend?
+    - Can you recommend me some book?
+    - Do you have some books to recommend
+    - do you have a book to recommend?
+    - can you recommend me a book
+    - any book to recommend
+    - i would like a book
+    - do you have some book to reccommend
+    - could you tell me some book
+- intent: chitchat
+  examples: |
+    - recommend me a book
+- intent: chitchat/covid_info
+  examples: |
+    - Where can I get covid information?
+    - can you tell me about covid
+    - where can i get a vaccine
+    - where can i find info on corona
+    - where can i find something about covid
+    - tell me about covid
+    - where can i get info on covid
+- intent: faq/ffri_definition
+  examples: |
+    - what is FFRI
+    - tell me about ffri
+    - what are centres in ffri
+    - what is ffri
+- intent: faq/public_transport_bus
+  examples: |
+    - Which bus should I take to get to Trsat Campus from city centre?
+    - How do I get to Campus Trsat by bus?
+    - how to get to ffri?
+    - what bus can take me to ffri?
+    - which bus can I take to ffri
+    - How can I get to FFRI?
+    - how to arrive at ffri by public transport
+    - how long does it take to get to trsat by bus
+- intent: faq/ffri_departments
+  examples: |
+    - Which departments FFRI is offering?
+    - What are the departments at faculty?
+    - how many departments are at faculty?
+- intent: faq/ffri_centers
+  examples: |
+    - Which centers are at the FFRI?
+    - tell me about centers at ffri
+    - faq/ffri_centers_cis
+    - what are scientific centers in ffri
+    - how many centers are at FFRI
+    - what are the centers at ffri
+- intent: faq/ffri_centers_cis
+  examples: |
+    - What is Center for Iconographic Studies?
+    - iconographic studies
+    - tell me about iconographic studies
+- intent: faq/ffri_departments_cs
+  examples: |
+    - What are cultural studies?
+    - What are cultural studies
+    - tell me about Cultural Studies
+    - can you tell me something about cultural studies
+    - are there any studies that deal with culture?
+    - tell me something about cultural studies
+- intent: faq/ffri_contact
+  examples: |
+    - Give me a contact of FFRI
+- intent: faq/ffri_departments_h
+  examples: |
+    - Tell me more about Department of History
+    - I want to study history in Rijeka
+    - Is there history course at FFRI?
+    - Can I study history in Rijeka?
+- intent: faq/ffri_departments_edu
+  examples: |
+    - Tell me more about Department of Education
+    - I'm interested in studying education in Rijeka
+    - Is there Education studies on FFRI?
+    - is there lagnuage stududies in rijeka
+- intent: faq/ffri_departments_ah
+  examples: |
+    - Tell me more about Department of Art History
+    - I'm interested in Art History courses in Rijeka
+    - Is there possibility of studying art history in Rijeka region?
+- intent: faq/ffri_departments_cll
+  examples: |
+    - what about croatian language
+- intent: faq/ffri_centers_clr
+  examples: |
+    - What is Centre for Language Research on FFRI?
+    - Tell me more about Centre for Language Research
+- intent: faq/ffri_centers_cte
+  examples: |
+    - Tell me more about Centre for Teacher Education
+    - What is Centre for Teacher Education ?
+- intent: faq/ffri_centers_cws
+  examples: |
+    - Tell me more about Centre for Women's Studies
+    - What is Centre for Women's Studies?
+    - What does Centre for Women's Studies do?
+    - women studies
+    - centre for women's studies
+- intent: faq/ffri_centers_rcs
+  examples: |
+    - Tell me more about Rijeka Croatist School
+    - What is Rijeka Croatist School in FFRI?
+- intent: faq/public_transport_bus_ride
+  examples: |
+    - How long does the bus ride from the city center to Trsat Campus take?
+    - what bus takes me to the ffri
+    - how long does the bus ride takes from centre
+    - how long does the bus ride from the city center to treat take?
+- intent: faq/ffri_departments_ell
+  examples: |
+    - is there department of english
+- intent: faq/public_transport_map
+  examples: |
+    - what is the most direct way to get to ffri
+    - What is the most direct way?
+- intent: faq/restaurants
+  examples: |
+    - can you recommend me a restaurant
+    - Are there any restaurants around?
+    - is there any restaurant around
+- intent: faq/accommodation_dormitory
+  examples: |
+    - Are there any student dormitories in rijeka
+    - where can i find student accommodation?
+    - which student dormitories are in rijeka
+- intent: faq/accommodation_private
+  examples: |
+    - where can i find an apartment in rijeka?
+    - where can i live in rijeka?
+    - i want to rent an apartment
+    - how can i rent an apartment
+    - i need an apartment
 - intent: book_recommend
   examples: |
-    - find me a book
-- intent: covid_testing
+    - would you recommend me a book
+- intent: mood_deny
   examples: |
-    - I need to do covid testing
-    - Where can I do covid testing
-    - I have symptoms that might be corona
-    - How to do PCR for corona in Rijeka?
+    - I'm okay
+- intent: mood_angry
+  examples: |
+    - i'm angry

@@ -13,7 +13,7 @@ stories:
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
-  - intent: mood_affirm
+  - intent: affirm
   - action: utter_happy
 - story: sad path 2
   steps:
@@ -22,25 +22,22 @@ stories:
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
-  - intent: mood_deny
+  - intent: deny
   - action: utter_goodbye
-- story: say goodbye
+rules:
+- rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
-- story: angry
+- rule: Say 'I am a bot' anytime the user challenges
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_angry
-  - action: utter_angry
-  - action: utter_angry_picture
-  - action: utter_goodbye
-- story: Story from Conversation ID c6c5bfdb410c4ef0b70601e1bec18bed
-  steps:
-  - intent: created_bot
+  - intent: bot_challenge
   - action: utter_iamabot
-- story: Story from Conversation ID b99addcbe8ac46d1a630b3555ab87c55
+- rule: respond to chitchat
   steps:
-  - intent: book_recommend
-  - action: utter_what_kind_of_book
+  - intent: chitchat
+  - action: utter_chitchat
+- rule: respond to faq
+  steps:
+  - intent: faq
+  - action: utter_faq
